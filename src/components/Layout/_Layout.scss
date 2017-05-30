@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Sans-serif;
+}
+
+
+/*header {
+    background: $template-color;
+    color: #fff;
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    div {
+        margin: 20px;
+    }
+}
+
+article {
+    margin: 15px;
+}*/
+
+.container {
+    @include flex-layout(inherit, flex, wrap, inherit);
+    .nav,
+    .section {}
+    .nav {
+        background: $template-color;
+        height: 100vh;
+        ul {
+            padding: 0;
+            margin: 15px;
+            line-height: 2;
+            li {
+                list-style-type: none;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    &:hover {
+                        color: silver;
+                    }
+                }
+            }
+        }
+    }
+    .section {
+        border: solid;
+        flex: 1;
+        .content {
+            margin: 15px;
+        }
+    }
+}

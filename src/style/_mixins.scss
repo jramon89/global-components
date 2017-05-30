@@ -1,0 +1,22 @@
+@mixin flex-layout($align, $display, $flow , $justified){
+	align-items: $align;
+	display: $display;
+	flex-flow: $flow;
+	justify-content: $justified;
+}
+
+@mixin transition($time) {
+    -webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    -ms-transition: all $time ease;
+    -o-transition: all $time ease;
+    transition: all $time ease;
+}
+
+@mixin transform($type) {
+    -webkit-transform: $type;
+    -moz-transform: $type;
+    -ms-transform: $type;
+    -o-transform: $type;
+    transform: $type;
+}

@@ -1,0 +1,28 @@
+.collapse {
+    .collapse-content {
+        border: solid 1px lightgrey;
+        box-shadow: 2px 2px 3px lightgrey;
+        .header {
+            background: $template-color;
+            color: #fff;
+            cursor: pointer;
+            @include flex-layout(center, flex, wrap, inherit);
+            .title {
+                flex: 1;
+                margin: 5px 10px 5px;
+            }
+            .arrow {
+                margin: 5px 10px 5px;
+            }
+        }
+        .body {
+            height: auto;
+            max-height: 0px;
+            overflow: auto;
+            @include transition(0.5s);
+            .content-body {
+                margin: 0 0 0 10px;
+            }
+        }
+    }
+}

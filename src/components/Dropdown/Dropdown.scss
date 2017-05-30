@@ -1,0 +1,34 @@
+.dropdown {
+    .dropdown-content {
+        position: relative;
+        bottom: auto;
+        .dropdown-header {
+            box-shadow: inset 0px 2px 15px 5px lightgrey;
+            @include flex-layout(center, flex, wrap, inherit);
+            width: 100%;
+            .dropdown-title {
+                flex: 1;
+                font-size: 14px;
+            }
+            .dropdown-title,
+            .dropdown-arrow {
+                margin: 5px 12px 5px 12px
+            }
+        }
+        .dropdown-body {
+            background: #fff;
+            box-shadow: inset 0px 2px 15px 5px lightgrey;
+            height: auto;
+            max-height: 0px;
+            position: absolute;
+            transition: all 0.5s ease;
+            width: 100%;
+            overflow: auto;
+            
+            .dropdown-items {
+            	margin: 12px;
+            }
+
+        }
+    }
+}
