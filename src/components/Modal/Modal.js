@@ -12,7 +12,9 @@ class Modal extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state={}
+		this.state={
+			show: props.isOpen
+		}
 		
 	}
 
@@ -30,7 +32,7 @@ class Modal extends Component {
 	
 
 	componentDidMount() {
-		const { title } = this.props;
+		const { title, isOpen } = this.props;
 		const { modal } = this.refs;
 
 		document.querySelector('body')
@@ -39,16 +41,24 @@ class Modal extends Component {
 		if(title){
 			this.refs.active.classList.add('margin-elements');
 		}
+		alert();
+		if(isOpen){
+			this.delayTime(()=>{
+				modal.classList.add('show');
+			});	
+		}
 
-		this.delayTime(()=>{
-			modal.classList.add('show');
-		});
+		
 	}
 
 	componentWillUnmount() {
-		//alert('Unmounted');
+		alert();
 		document.querySelector('body')
 			.classList.remove('modal-open');
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps);
 	}
 
 	close(e) {
@@ -57,17 +67,19 @@ class Modal extends Component {
 		const { modal } = this.refs;
 
 		this.delayTime(()=>{
-			modal.classList.add('hide');
+			//modal.classList.add('hide');
 		});
 
 		this.delayTime(function(){
-			this.props.toggleModal();
+			//this.props.toggleModal();
 		}.bind(this),500)
+
 
 	}
 
 	render() {
 		const { children, title, isOpen } = this.props;
+		const { show } = this.state;
 
 		const addTitle = title ? (
 			<div className="modal-header"  >

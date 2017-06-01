@@ -1,0 +1,24 @@
+.popover {
+	position: relative;
+	.popover-hover{
+		
+	}
+	.popover-content{
+
+		background: #fff;
+		box-shadow: 0 0 5px silver; 
+		margin: 5px 0;
+		position: absolute;
+		right: 0;
+
+		.popover-items-content{
+			margin: 10px;
+			position: relative;
+			right: 0;
+			white-space: nowrap;
+		
+
+		}
+
+	}
+}

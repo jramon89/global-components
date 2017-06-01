@@ -1,0 +1,25 @@
+.tooltip {
+    width: auto;
+    position: relative;
+    .tooltip-hover {
+    }
+    .tooltip-content {
+        box-shadow: 2px 2px 5px silver;
+        position: absolute;
+        background: $template-color;
+        color: #fff;
+        font-size: 10px;
+        .item{
+        	margin: 5px;
+        }
+        &:before {
+            content: "";
+            border-bottom: solid 7px $template-color;
+            border-top: solid 7px transparent;
+            border-left: solid 7px transparent;
+            border-right: solid 7px transparent;
+            position: absolute;
+            top:-13px;
+        }
+    }
+}
