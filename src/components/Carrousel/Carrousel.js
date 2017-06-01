@@ -23,20 +23,23 @@ class Corrousel extends Component {
 			itemsElements: null,
 			bulletsElements: null,
 			previewsElements: null
-		}
-		
+		};
+		this.interval=null;
 	}
 
+	autoPlay(play) {
+		if(play){
+			this.interval = this.intervalTime(function(){
+				this.next()
+			}.bind(this),3500);
+		}
+	}
 
 	componentDidMount() {
 		const { autoPlay } = this.props;
 		const { list, previews, bullets } = this.refs;
 
-		if(autoPlay){
-			this.intervalTime(function(){
-				this.next()
-			}.bind(this),3500);
-		}
+		this.autoPlay(autoPlay);
 
 		this.setState({
 			itemsElements: list.refs.items,
@@ -46,9 +49,12 @@ class Corrousel extends Component {
 
 	}
 
+	componentWillUnmount() {
+		clearInterval(this.interval)
+	}
 
 	intervalTime(callback, time) {
-		setInterval(()=>{
+		return setInterval(()=>{
 			callback()
 		}, time)
 	}

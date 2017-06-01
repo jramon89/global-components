@@ -18,7 +18,8 @@ class AlertInit extends Component{
 
 			<Alert 
 				header="Dialog title"
-				maxWidth={300}>
+				maxWidth={300}
+				show={true}>
 				<div>
 					<p>
 						Content

@@ -11,9 +11,10 @@ const routes = (
 		<Layout>
 			<Switch>
 				<Route exact path="/" component={Views.Test}/>
-				<Route exact path="/accordion" component={Views.Accordion}/>
-
-				<Route exact path="/alert" component={Views.Alert}/>
+				<Route path="/accordion" component={Views.Accordion}/>
+				<Route path="/alert" component={Views.Alert}/>
+				<Route path="/carrousel" component={Views.Carrousel}/>
+				<Route path="/modal" component={Views.Modal}/>
 			</Switch>
 		</Layout>
 	</Router>

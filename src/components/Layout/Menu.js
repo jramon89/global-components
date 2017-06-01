@@ -20,6 +20,12 @@ class Menu extends Component{
 					<li>
 						<Link to="/alert">Alert</Link>
 					</li>
+					<li>
+						<Link to="/carrousel">Carrousel</Link>
+					</li>
+					<li>
+						<Link to="/modal">Modal</Link>
+					</li>
 				</ul>
 			</nav>
 		);
