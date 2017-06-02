@@ -7,12 +7,14 @@ class CarrouselInit extends Component{
     constructor(props){
         super(props);
         this.state={
-            show: false
+            show: true
         };
     }
 
     toggleModal() {
-        alert('modal');
+       this.setState({
+            show: !this.state.show
+       });
     }
     
     render() {
@@ -20,9 +22,10 @@ class CarrouselInit extends Component{
 
         return(
           <div>
-            <a href="#" onClick={ () => this.toggleModal }>Show modal</a>
+            <span onClick={ this.toggleModal.bind(this) }>Show modal</span>
             <Modal
-                isOpen={show}>
+                isOpen={show}
+                toggleModal={this.toggleModal.bind(this)}>
                 <h1>
                     Content
                 </h1>

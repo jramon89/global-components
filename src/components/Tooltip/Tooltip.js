@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
 export default
 class Tooltip extends Component{
 	static porpTypes = {

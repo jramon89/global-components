@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import AccordionItem from './AccordionItem';
+import PropTypes from 'prop-types';
 export default
 class Collapse extends Component {
 	static propTypes =  {

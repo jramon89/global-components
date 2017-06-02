@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default
 class Modal extends Component {
@@ -32,33 +33,46 @@ class Modal extends Component {
 	
 
 	componentDidMount() {
-		const { title, isOpen } = this.props;
-		const { modal } = this.refs;
+		const { title } = this.props,
+			  { modal } = this.refs,
+			  { show } = this.state;
 
 		document.querySelector('body')
 			.classList.add('modal-open');
-		
-		if(title){
-			this.refs.active.classList.add('margin-elements');
-		}
-		alert();
-		if(isOpen){
+
+		if(show){
+			if(title){
+				this.refs.active.classList.add('margin-elements');
+			}
+
 			this.delayTime(()=>{
 				modal.classList.add('show');
-			});	
+			});
 		}
+	}
 
-		
+	componentDidUpdate() {
+		const { show } = this.state,
+			  { modal } = this.refs;
+
+
+		if(show){
+			this.delayTime(()=>{
+				modal.classList.add('show');
+			});
+		}
+	}
+	
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			show: nextProps.isOpen
+		});
 	}
 
 	componentWillUnmount() {
-		alert();
+		//alert('Unmounted');
 		document.querySelector('body')
 			.classList.remove('modal-open');
-	}
-
-	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
 	}
 
 	close(e) {
@@ -67,13 +81,12 @@ class Modal extends Component {
 		const { modal } = this.refs;
 
 		this.delayTime(()=>{
-			//modal.classList.add('hide');
+			modal.classList.add('hide');
 		});
 
 		this.delayTime(function(){
-			//this.props.toggleModal();
+			this.props.toggleModal();
 		}.bind(this),500)
-
 
 	}
 
@@ -90,7 +103,7 @@ class Modal extends Component {
 
 		) : null;
 
-		const renderModal = isOpen ? (
+		const renderModal = show ? (
 			<div className="modal" ref="modal">
 				<div className="modal-dialog">
 					<div className="modal-content">

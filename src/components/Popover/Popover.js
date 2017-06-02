@@ -1,5 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import PopoverContent from './PopoverContent';
+
+import PropTypes from 'prop-types';
 
 class Popover extends Component {
 
