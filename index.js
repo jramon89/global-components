@@ -8,4 +8,4 @@ const webpack = require('webpack'),
         stats: {
             colors: true
         }
-    }).listen(3000);
+    }).listen(4000);

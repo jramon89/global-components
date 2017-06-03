@@ -70,7 +70,6 @@ class Modal extends Component {
 	}
 
 	componentWillUnmount() {
-		//alert('Unmounted');
 		document.querySelector('body')
 			.classList.remove('modal-open');
 	}

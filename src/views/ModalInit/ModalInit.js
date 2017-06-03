@@ -26,9 +26,7 @@ class CarrouselInit extends Component{
             <Modal
                 isOpen={show}
                 toggleModal={this.toggleModal.bind(this)}>
-                <h1>
-                    Content
-                </h1>
+                <img src="http://lorempixel.com/900/400/animals/" alt="animals"/>
             </Modal>
           </div>
         

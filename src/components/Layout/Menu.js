@@ -13,20 +13,29 @@ class Menu extends Component{
 	render() {
 		return(
 			<nav className="nav">
-				<ul>
-					<li>
-						<Link to="/accordion">Accordion</Link>
-					</li>
-					<li>
-						<Link to="/alert">Alert</Link>
-					</li>
-					<li>
-						<Link to="/carrousel">Carrousel</Link>
-					</li>
-					<li>
-						<Link to="/modal">Modal</Link>
-					</li>
-				</ul>
+				<div className="nav-content">
+					<ul>
+						<li>
+							<Link to="/accordion">Accordion</Link>
+						</li>
+						<li>
+							<Link to="/alert">Alert</Link>
+						</li>
+						<li>
+							<Link to="/carrousel">Carrousel</Link>
+						</li>
+						<li>
+							<Link to="/modal">Modal</Link>
+						</li>
+						<li>
+							<Link to="/">Dropdown</Link>
+						</li>
+						<li>
+							<Link to="/">Tooltip</Link>
+						</li>
+					</ul>
+				</div>
+			
 			</nav>
 		);
 	}
