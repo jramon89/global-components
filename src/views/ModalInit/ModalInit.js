@@ -22,7 +22,7 @@ class CarrouselInit extends Component{
 
         return(
           <div>
-            <span onClick={ this.toggleModal.bind(this) }>Show modal</span>
+            <button onClick={ this.toggleModal.bind(this) }>Show modal</button>
             <Modal
                 isOpen={show}
                 toggleModal={this.toggleModal.bind(this)}>

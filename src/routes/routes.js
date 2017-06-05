@@ -15,6 +15,9 @@ const routes = (
 				<Route path="/alert" component={Views.Alert}/>
 				<Route path="/carrousel" component={Views.Carrousel}/>
 				<Route path="/modal" component={Views.Modal}/>
+				<Route path="/dropdown" component={Views.Dropdown}/>
+				<Route path="/tooltip" component={Views.Tooltip}/>
+				<Route path="/collapse" component={Views.Collapse}/>
 			</Switch>
 		</Layout>
 	</Router>

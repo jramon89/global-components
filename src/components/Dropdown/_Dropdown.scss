@@ -6,6 +6,7 @@
             box-shadow: inset 0px 2px 15px 5px lightgrey;
             @include flex-layout(center, flex, wrap, inherit);
             width: 100%;
+            cursor: pointer;
             .dropdown-title {
                 flex: 1;
                 font-size: 14px;

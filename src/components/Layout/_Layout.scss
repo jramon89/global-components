@@ -25,10 +25,17 @@ article {
     .nav {
         background: $template-color;
         height: 100vh;
+        .nav-title {
+            text-align: center;
+            margin: 15px;
+            font-size: 20px;
+            color: #fff;
+        }
         .nav-content {
+            margin: 20px;
             ul {
                 padding: 0;
-                margin: 15px;
+                margin: 0;
                 line-height: 2;
                 li {
                     list-style-type: none;

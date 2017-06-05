@@ -11,21 +11,34 @@ class Tooltip extends Component{
 	constructor(props) {
 		super(props)
 		this.state={
-			show: false
+			show: false,
 		};
 	}
+	
+	componentDidUpdate(){
+		const { show } = this.state,
+			  { tc } = this.refs;
+
+		if(show){
+			setTimeout(()=>{
+				tc.style.top="20px";
+			});
+		}
+	}
+
 	toggle() {
 		
 		this.setState({
 			show: !this.state.show
 		});
 	}
+
 	render() {
 		const { children, hoverElement } = this.props;
 		const { show } = this.state;
 
 		const content = show ? (
-			<div className="tooltip-content">
+			<div className="tooltip-content" ref="tc">
 				<div className="item">
 					{children}
 				</div>

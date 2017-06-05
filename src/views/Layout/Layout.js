@@ -13,9 +13,13 @@ class Layout extends Component{
 	render() {
 		const { children } = this.props; 
 		return(
-			<section className="container">
-				<Menu/>
-				<Content children={children}/>
+			<section>
+				<section className="container">
+					<Menu/>
+					<Content children={children}/>
+
+				</section>
+				<footer className="footer"></footer>
 			</section>
 		);
 	}

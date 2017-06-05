@@ -13,6 +13,7 @@ class Menu extends Component{
 	render() {
 		return(
 			<nav className="nav">
+				<div className="nav-title">Components</div>
 				<div className="nav-content">
 					<ul>
 						<li>
@@ -28,10 +29,19 @@ class Menu extends Component{
 							<Link to="/modal">Modal</Link>
 						</li>
 						<li>
-							<Link to="/">Dropdown</Link>
+							<Link to="/dropdown">Dropdown</Link>
 						</li>
 						<li>
-							<Link to="/">Tooltip</Link>
+							<Link to="/tooltip">Tooltip</Link>
+						</li>
+						<li>
+							<Link to="/collapse">Collapse</Link>
+						</li>
+						<li>
+							<Link to="/draganddrop">Drag & Drop</Link>
+						</li>
+						<li>
+							<Link to="/popover">Popover</Link>
 						</li>
 					</ul>
 				</div>

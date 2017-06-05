@@ -7,7 +7,10 @@ class Dropdown extends Component {
 	static propTypes = {
 
 		title: PropTypes.string.isRequired,
-		children: PropTypes.element.isRequired
+		children: PropTypes.element.isRequired,
+		maxHeight: PropTypes.number,
+		open: PropTypes.bool,
+		selected: PropTypes.string
 	}
 
 
@@ -33,11 +36,19 @@ class Dropdown extends Component {
 		this.setState({
 			position: (top-bottom) <= maxHeight ? "28px" : 'inherit', 
 			bottom: bottom,
-			top: top
+			top: top,
+			slide: this.props.open ? maxHeight : 0
 		});
 
 	}
 
+	componentWillReceiveProps(nextProps) {
+		
+		this.setState({
+			slide: 0 
+		})
+	}
+	
 	timeDelay(values, time, callback) {
 		setTimeout(()=>{
 			this.setState(values);
@@ -47,32 +58,25 @@ class Dropdown extends Component {
 	onToggle() {
 		
 		const { open, maxHeight } = this.state;
-		//const { maxHeight } = this.props;
 	
-
 		this.setState({
 			open: !this.state.open,
-			slide: !open ? maxHeight : 0
-			//slide: !open ? (maxHeight ? maxHeight : 200) : 0
+			slide: this.state.slide > 0 ? 0 : maxHeight
 		});
-
-
 
 	}
 
 	render() {
 		
-		const { title, children } = this.props;
+		const { title, children, selected } = this.props;
 		const { open, slide, maxHeight, position, bottom, top } = this.state;
 
-
-		//const position =  (top-bottom) <= (maxHeight ? maxHeight : 200) ? "28px" : 'inherit'
 		return(
 			<div className="dropdown">
 				<div className="dropdown-content">
 					<div className="dropdown-header" ref="dropdown" onClick={this.onToggle.bind(this)}>
 						<div className="dropdown-title">
-							{ title }
+							{ selected ? selected : title }
 						</div>
 						<div className="dropdown-arrow">
 							<span className="fa fa-chevron-down"/>
