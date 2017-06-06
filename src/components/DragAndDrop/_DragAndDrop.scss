@@ -1,22 +1,33 @@
 .drag-drop {
-    border: solid;
-    @include flex-layout(center, flex, wrap, inherit);
+    @include flex-layout(center, flex, wrap, center);
+    .arrow{
+        color: $template-color;
+        font-size: 30px;
+    }
     .element-content {
-        border: solid;
         .element {
-        	padding: 20px;
-        	border: solid;
-        	margin: 20px;
+            padding: 20px;
+            border: solid;
+            margin: 20px;
+            color: #fff;
+            cursor: move;
+            &:nth-of-type(odd) {
+                background: $template-color;
+            }
+            &:nth-of-type(even) {
+                background: #3C5BAA;
+            }
         }
     }
-    .drag-elements-content {
-        border: solid;
-        flex: 1;
-        margin-right: 10px;
+    .drop-content,
+    .drag-content {
+        box-shadow: 2px 5px 10px #333;
+        width: 35%;
     }
-    .drop-elements-content {
-        border: solid;
-        flex: 1;
+    .drop-content {
         margin-left: 10px;
+    }
+    .drag-content {
+        margin-right: 10px;
     }
 }

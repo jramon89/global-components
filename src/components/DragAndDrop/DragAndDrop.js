@@ -13,6 +13,43 @@ class DragAndDrop extends Component {
 		
 		this.state={}
 	}
+	
+	componentDidMount() {
+		const { drag, drop } = this.refs;
+		drop.style.height=drag.offsetHeight+"px";
+	}
+
+	dragStart(e) {
+		e.target.style.border="dashed";
+		e.dataTransfer.setData('text/html', e.target.innerHTML);
+	}
+
+	dragEnd(e) {
+		e.target.style.border="inherit";
+	}
+
+	dragEnter(e) {
+		e.target.style.border="solid red";
+	}
+
+	dragOver(e) {
+		if (e.preventDefault) {
+		   e.preventDefault();
+		}
+	}
+
+	drop(e) {
+		if(e.stopPropagation()){
+			e.stopPropagation();
+		}
+		if(e.preventDefault()){
+			e.preventDefault();
+		}
+	
+		console.log(e.dataTransfer.getData('text/html'));
+		//return false;
+		e.target.innerHTML = e.dataTransfer.getData('text/html');
+	}
 
 	render() {
 		const { items } = this.props;
@@ -20,21 +57,26 @@ class DragAndDrop extends Component {
 		const elements = items.map((v,i)=>{
 				console.log(v.item)
 			return(
-				<div key={i} className="element">
+				<div key={i} className="element" draggable="true"
+				 onDragStart={ (e) => {this.dragStart(e)}}
+				 onDragEnd={ (e) => {this.dragEnd(e)}}>
 					Element {i}
 				</div>
 			);
 		})
+
 		return(
 			<div className="drag-drop">
-				<div className="drag-elements-content">
+				<div className="drag-content" ref="drag">
 					<div className="element-content">
 						{elements}
 					</div>
 				</div>
-				<span className="fa fa-arrow-left"/>
-				<span className="fa fa-arrow-right"/>
-				<div className="drop-elements-content">
+				<span className="fa fa-chevron-left arrow"/>
+				<span className="fa fa-chevron-right arrow"/>
+				<div className="drop-content" ref="drop" 
+					onDragOver={ (e) => {this.dragOver(e)} }
+					onDrop={ (e) => {this.drop(e)} }>
 					b
 				</div>
 			</div>
