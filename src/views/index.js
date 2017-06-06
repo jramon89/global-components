@@ -7,6 +7,7 @@ import Modal from './ModalInit/ModalInit';
 import Dropdown from './DropdownInit/DropdownInit';
 import Tooltip from './TooltipInit/TooltipInit';
 import Collapse from './CollapseInit/CollapseInit';
+import DragAndDrop from './DragAndDropInit/DragAndDropInit';
 
 export default {
 	Layout,
@@ -18,4 +19,5 @@ export default {
     Dropdown,
     Tooltip,
     Collapse,
+    DragAndDrop,
 }

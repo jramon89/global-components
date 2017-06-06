@@ -1,0 +1,22 @@
+.drag-drop {
+    border: solid;
+    @include flex-layout(center, flex, wrap, inherit);
+    .element-content {
+        border: solid;
+        .element {
+        	padding: 20px;
+        	border: solid;
+        	margin: 20px;
+        }
+    }
+    .drag-elements-content {
+        border: solid;
+        flex: 1;
+        margin-right: 10px;
+    }
+    .drop-elements-content {
+        border: solid;
+        flex: 1;
+        margin-left: 10px;
+    }
+}
