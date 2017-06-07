@@ -21,7 +21,7 @@ class DragAndDrop extends Component {
 
 	dragStart(e) {
 		e.target.style.border="dashed";
-		e.dataTransfer.setData('text/html', e.target.innerHTML);
+		e.dataTransfer.setData('Text', e.target.getAttribute('id'));
 	}
 
 	dragEnd(e) {
@@ -46,9 +46,9 @@ class DragAndDrop extends Component {
 			e.preventDefault();
 		}
 	
-		console.log(e.dataTransfer.getData('text/html'));
+		console.log(e.dataTransfer.getData('Text'));
 		//return false;
-		e.target.innerHTML = e.dataTransfer.getData('text/html');
+		e.target.appendChild(document.getElementById(e.dataTransfer.getData('Text')));
 	}
 
 	render() {
@@ -57,7 +57,7 @@ class DragAndDrop extends Component {
 		const elements = items.map((v,i)=>{
 				console.log(v.item)
 			return(
-				<div key={i} className="element" draggable="true"
+				<div key={i} className="element" id={"drg-"+i} draggable="true"
 				 onDragStart={ (e) => {this.dragStart(e)}}
 				 onDragEnd={ (e) => {this.dragEnd(e)}}>
 					Element {i}
@@ -77,7 +77,6 @@ class DragAndDrop extends Component {
 				<div className="drop-content" ref="drop" 
 					onDragOver={ (e) => {this.dragOver(e)} }
 					onDrop={ (e) => {this.drop(e)} }>
-					b
 				</div>
 			</div>
 		);
