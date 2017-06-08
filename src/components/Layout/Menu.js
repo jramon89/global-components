@@ -10,10 +10,22 @@ class Menu extends Component{
 		children: PropTypes.object
 	}
 
+	componentDidMount() {
+		
+		this.image.style.width = this.nav.offsetWidth+"px";
+	}
+
 	render() {
 		return(
-			<nav className="nav">
-				<div className="nav-title">Components</div>
+			<nav className="nav" ref={ (e) => this.nav = e }>
+
+				<div className="nav-title">
+					Components&nbsp;
+					<span className="fa fa-code"/>
+				</div>
+				<div className="react-image">
+					<img src="https://facebook.github.io/react/img/logo.svg" width="10" ref={ (e) => this.image = e }/>
+				</div>
 				<div className="nav-content">
 					<ul>
 						<li>

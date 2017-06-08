@@ -10,6 +10,12 @@
         margin: 20px;
         color: #fff;
         cursor: move;
+        position: relative;
+        @include transition(0.5s);
+        &.start {
+            border: dashed;
+            @include transform(scale(0.5));
+        }
         &:nth-of-type(odd) {
             background: $template-color;
         }
@@ -21,6 +27,12 @@
     .drag-content {
         box-shadow: 2px 5px 10px #333;
         width: 35%;
+        position: relative;
+        background: #fff;
+        @include transition(0.5s);
+        &.over {
+            @include transform(scale(1.1));
+        }
     }
     .drop-content {
         margin-left: 10px;

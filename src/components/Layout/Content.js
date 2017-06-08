@@ -5,15 +5,21 @@ export default
 class Content extends Component{
 	
 	static propTypes = {
-		children: PropTypes.object
+		children: PropTypes.object,
+		title: PropTypes.string
 	}
 
 	render() {
-		const { children } = this.props; 
+		const { children, title } = this.props; 
 		return(
 			<section className="section">
 				<div className="content">
-					{children}
+					<div className="main-title">
+						{title} zzzzzzz
+					</div>
+					<div>
+						{children}
+					</div>
 				</div>
 			</section>
 		);
