@@ -20,8 +20,9 @@ class AccordionInit extends Component{
 		const { data } = this.state;
 
 		return(
-
-			<Accordion data={data}/>
+			<div>
+				<Accordion data={data}/>
+			</div>
 		);
 	}
 

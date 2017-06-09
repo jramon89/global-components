@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Logo from '../../../static/logo.svg';   
 
 export default
 class Menu extends Component{
@@ -10,8 +11,31 @@ class Menu extends Component{
 		children: PropTypes.object
 	}
 
+	constructor(props) {
+		super(props);
+		this.items = [
+			{link:'/accordion', title:'Accordion'},
+			{link:'/alert', title:'Alert'},
+			{link:'/collapse', title:'Collapse'},
+			{link:'/dropdown', title:'Dropdown'},
+			{link:'/tooltip', title:'Tooltip'},
+			{link:'/modal', title:'Modal'},
+			{link:'/carrousel', title:'Carrousel'},
+			{link:'/draganddrop', title:'Drag & Drop'},
+			{link:'/popover', title:'Popover'}
+		]
+	}
+
+	setTitle(title) {
+		localStorage.setItem(
+			'title',
+			JSON.stringify(title)
+		);
+	
+	}
+
 	componentDidMount() {
-		
+
 		this.image.style.width = this.nav.offsetWidth+"px";
 	}
 
@@ -19,42 +43,27 @@ class Menu extends Component{
 		return(
 			<nav className="nav" ref={ (e) => this.nav = e }>
 
+				
+				<div className="logo">
+					<img src={Logo} width="10" ref={ (e) => this.image = e }/>
+				</div>
 				<div className="nav-title">
 					Components&nbsp;
 					<span className="fa fa-code"/>
 				</div>
-				<div className="react-image">
-					<img src="https://facebook.github.io/react/img/logo.svg" width="10" ref={ (e) => this.image = e }/>
-				</div>
 				<div className="nav-content">
 					<ul>
-						<li>
-							<Link to="/accordion">Accordion</Link>
-						</li>
-						<li>
-							<Link to="/alert">Alert</Link>
-						</li>
-						<li>
-							<Link to="/carrousel">Carrousel</Link>
-						</li>
-						<li>
-							<Link to="/modal">Modal</Link>
-						</li>
-						<li>
-							<Link to="/dropdown">Dropdown</Link>
-						</li>
-						<li>
-							<Link to="/tooltip">Tooltip</Link>
-						</li>
-						<li>
-							<Link to="/collapse">Collapse</Link>
-						</li>
-						<li>
-							<Link to="/draganddrop">Drag & Drop</Link>
-						</li>
-						<li>
-							<Link to="/popover">Popover</Link>
-						</li>
+						{
+							this.items.map((value, i) => {
+								return(
+									<li key={i}>
+										<Link to={value.link} onClick={ () => this.setTitle(value) }>
+											{value.title}
+										</Link>
+									</li>
+								)
+							})
+						}
 					</ul>
 				</div>
 			

@@ -25,11 +25,20 @@ article {
     .nav {
         background: $template-color;
         height: 100vh;
+        color: silver;
         .nav-title {
             /*text-align: center;*/
             margin: 15px;
             font-size: 20px;
-            color: #fff;
+        }
+        .logo {
+            img {
+                opacity: 0.3;
+                @include transition(2s);
+                &:hover {
+                    @include transform(rotate(360deg));
+                }
+            }
         }
         .nav-content {
             margin: 20px;
@@ -40,10 +49,10 @@ article {
                 li {
                     list-style-type: none;
                     a {
-                        color: #fff;
+                        color: silver;
                         text-decoration: none;
                         &:hover {
-                            color: silver;
+                            color: #fff;
                         }
                     }
                 }
@@ -54,9 +63,10 @@ article {
         flex: 1;
         .content {
             margin: 8px 15px;
-            .main-title{
-                font-size: 30px;
+            .main-title {
+                font-size: 20px;
                 margin-bottom: 10px;
+                color: grey;
             }
         }
     }

@@ -6,16 +6,17 @@ class Content extends Component{
 	
 	static propTypes = {
 		children: PropTypes.object,
-		title: PropTypes.string
 	}
 
 	render() {
-		const { children, title } = this.props; 
+		const { children } = this.props; 
+		const storage = JSON.parse(localStorage.getItem('title'));
+	
 		return(
 			<section className="section">
 				<div className="content">
 					<div className="main-title">
-						{title} zzzzzzz
+						{storage.title}
 					</div>
 					<div>
 						{children}

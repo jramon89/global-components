@@ -25,13 +25,14 @@
     }
     .drop-content,
     .drag-content {
-        box-shadow: 2px 5px 10px #333;
+        box-shadow: 2px 4px 12px #333;
         width: 35%;
         position: relative;
         background: #fff;
         @include transition(0.5s);
         &.over {
             @include transform(scale(1.1));
+            box-shadow: 2px 4px 30px #333;
         }
     }
     .drop-content {
