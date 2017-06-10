@@ -8,15 +8,23 @@ class Content extends Component{
 		children: PropTypes.object,
 	}
 
+	constructor() {
+		super();
+		this.storage = null;
+	}
+
 	render() {
 		const { children } = this.props; 
-		const storage = JSON.parse(localStorage.getItem('title'));
-	
+
+			const storage = JSON.parse(localStorage.getItem('title'));	
+			
 		return(
 			<section className="section">
 				<div className="content">
 					<div className="main-title">
-						{storage.title}
+						{
+							storage ? storage.title : null
+						}
 					</div>
 					<div>
 						{children}

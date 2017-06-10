@@ -25,6 +25,7 @@ class Menu extends Component{
 			{link:'/popover', title:'Popover'}
 		]
 	}
+	
 
 	setTitle(title) {
 		localStorage.setItem(
