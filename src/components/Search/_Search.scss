@@ -1,0 +1,31 @@
+.search {
+    .search-items {
+        @include flex-layout(center, flex, inherit, flex-end);
+        .field {
+            position: absolute;
+            width: 0px;
+            @include transition(0.8s);
+            input {
+                padding: 3px;
+                width: 100%;
+                visibility: hidden;
+                padding-right: 20px;
+                @include transition(0.5s);
+            }
+        }
+        &.active {
+            background: #fff;
+            .field {
+                width: 100%;
+                input {
+                    visibility: visible;
+                }
+            }
+        }
+        .icon {
+            margin: 0 3px;
+            cursor: pointer;
+            z-index: 100;
+        }
+    }
+}

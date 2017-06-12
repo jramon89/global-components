@@ -22,6 +22,7 @@ class Menu extends Component{
 			{link:'/modal', title:'Modal'},
 			{link:'/carrousel', title:'Carrousel'},
 			{link:'/draganddrop', title:'Drag & Drop'},
+			{link:'/search', title:'Search'},
 			{link:'/popover', title:'Popover'}
 		]
 	}
