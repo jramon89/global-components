@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-//import { getFilteredCategory } from '../../actions/actionsTypes';
 export default
 class Search extends Component{
 
 	static propTypes = {
-		onSubmit: PropTypes.func
+		onSubmit: PropTypes.func,
+		animation: PropTypes.bool
 
 	}
 
@@ -25,30 +24,35 @@ class Search extends Component{
 	}
 
 	componentDidMount() {
-	
-		const { dispach } = this.props;
+		console.log(this.form.parentNode);
+		this.form.parentNode.position="relative";
 	}
 
 	onSubmitValue(e) {
 		e.preventDefault();
-		const { onSubmit } = this.props;
-		onSubmit(this.refs.search.value);
 	}
 
 	render() {
 		const { active } = this.state;
+		const { animation } = this.props;
+
 		return(
-			<form onSubmit={this.onSubmitValue.bind(this)}>
-				<div className="search">
-					<div className={ active ? 'search-items active' : 'search-items'}>
-						<div className="field">
-							<input ref="search" type="search" placeholder="search" />
-						</div>
-						<div className="icon" onClick={ this.onToggle.bind(this) }>
-							<span className="fa fa-search"/>
-						</div>
-					</div>
-				</div>
+			<form onSubmit={this.onSubmitValue.bind(this)} ref={ (e) => this.form = e }>
+				{
+					animation ?
+						<div className="search">
+							<div className={ active ? 'search-items active' : 'search-items'}>
+								<div className="field">
+									<input ref="search" type="search" placeholder="search" />
+								</div>
+								<div className="icon" onClick={ this.onToggle.bind(this) }>
+									<span className="fa fa-search"/>
+								</div>
+							</div>
+						</div> :
+					<input ref="search" type="search" placeholder="search" />
+
+				}
 			</form>
 		);
 	}

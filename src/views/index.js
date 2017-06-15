@@ -8,16 +8,18 @@ import Dropdown from './DropdownInit/DropdownInit';
 import Tooltip from './TooltipInit/TooltipInit';
 import Collapse from './CollapseInit/CollapseInit';
 import DragAndDrop from './DragAndDropInit/DragAndDropInit';
+import Search from './SearchInit/SearchInit';
 
 export default {
-	Layout,
-	Test,
-	Alert,
-	Accordion,
-	Carrousel,
+    Layout,
+    Test,
+    Alert,
+    Accordion,
+    Carrousel,
     Modal,
     Dropdown,
     Tooltip,
     Collapse,
     DragAndDrop,
+    Search,
 }

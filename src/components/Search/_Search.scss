@@ -3,7 +3,7 @@
         @include flex-layout(center, flex, inherit, flex-end);
         .field {
             position: absolute;
-            width: 0px;
+            width: 0%;
             @include transition(0.8s);
             input {
                 padding: 3px;
@@ -16,7 +16,6 @@
         &.active {
             background: #fff;
             .field {
-                width: 100%;
                 input {
                     visibility: visible;
                 }

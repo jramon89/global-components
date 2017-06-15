@@ -19,6 +19,8 @@ const routes = (
 				<Route path="/tooltip" component={Views.Tooltip}/>
 				<Route path="/collapse" component={Views.Collapse}/>
 				<Route path="/draganddrop" component={Views.DragAndDrop}/>
+
+				<Route path="/search" component={Views.Search}/>
 			</Switch>
 		</Layout>
 	</Router>
