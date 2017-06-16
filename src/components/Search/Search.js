@@ -24,8 +24,7 @@ class Search extends Component{
 	}
 
 	componentDidMount() {
-		console.log(this.form.parentNode);
-		this.form.parentNode.position="relative";
+		this.form.parentNode.style.position="relative";
 	}
 
 	onSubmitValue(e) {

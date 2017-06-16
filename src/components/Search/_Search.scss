@@ -4,25 +4,27 @@
         .field {
             position: absolute;
             width: 0%;
+            overflow: hidden;
             @include transition(0.8s);
             input {
-                padding: 3px;
+                padding: 6px;
                 width: 100%;
-                visibility: hidden;
-                padding-right: 20px;
+                //visibility: hidden;
                 @include transition(0.5s);
             }
         }
         &.active {
             background: #fff;
             .field {
+                width: 100%;
                 input {
+                    padding-right: 30px;
                     visibility: visible;
                 }
             }
         }
         .icon {
-            margin: 0 3px;
+            margin: 0 10px;
             cursor: pointer;
             z-index: 100;
         }
