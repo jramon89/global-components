@@ -55,7 +55,7 @@ class Modal extends Component {
 		const { show } = this.state,
 			  { modal } = this.refs;
 
-
+		console.log('updating', modal);
 		if(show){
 			this.delayTime(()=>{
 				modal.classList.add('show');

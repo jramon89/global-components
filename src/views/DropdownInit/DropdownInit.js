@@ -18,7 +18,12 @@ class DropdownInit extends Component{
             selected: e.target.innerText
         });
     }
-
+    componentWillMount() {
+        localStorage.setItem(
+            'title',
+            'Dropdown'
+        );
+    }
     render() {
         const { open, selected } = this.state;
         const style = {

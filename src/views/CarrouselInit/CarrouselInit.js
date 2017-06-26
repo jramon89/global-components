@@ -8,7 +8,7 @@ class CarrouselInit extends Component{
 		super(props);
 		this.state={
 			items:[
-				{
+				/*{
 					src: 'http://lorempixel.com/700/300/sports/'
 				},{
 					src: 'http://lorempixel.com/700/300/city/'
@@ -16,11 +16,25 @@ class CarrouselInit extends Component{
 					src: 'http://lorempixel.com/700/300/cats/'
 				},{
 					src: 'http://lorempixel.com/700/300/nature/'
+				}*/
+				{
+					src: '../../../static/images/image01.jpg'
+				},{
+					src: '../../../static/images/image02.jpg'
+				},{
+					src: '../../../static/images/image03.png'
+				},{
+					src: '../../../static/images/image06.jpg'
 				}
 			]
 		};
 	}
-
+	componentWillMount() {
+		localStorage.setItem(
+			'title',
+			'Carrousel'
+		);
+	}
 	render() {
 		const { items } = this.state;
 

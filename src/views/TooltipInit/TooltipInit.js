@@ -16,7 +16,12 @@ class TooltipInit extends Component{
             show: !this.state.show
        });
     }
-    
+    componentWillMount() {
+        localStorage.setItem(
+            'title',
+            'Tooltip'
+        );
+    }
     render() {
         const { show } = this.state;
 

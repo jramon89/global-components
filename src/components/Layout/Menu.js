@@ -14,6 +14,7 @@ class Menu extends Component{
 	constructor(props) {
 		super(props);
 		this.items = [
+			{link:'/', title:'Home'},
 			{link:'/accordion', title:'Accordion'},
 			{link:'/alert', title:'Alert'},
 			{link:'/collapse', title:'Collapse'},
@@ -31,7 +32,7 @@ class Menu extends Component{
 	setTitle(title) {
 		localStorage.setItem(
 			'title',
-			JSON.stringify(title)
+			title
 		);
 	
 	}
@@ -41,13 +42,17 @@ class Menu extends Component{
 		this.image.style.width = this.nav.offsetWidth+"px";
 	}
 
+	
+
 	render() {
 		return(
 			<nav className="nav" ref={ (e) => this.nav = e }>
 
 				
 				<div className="logo">
-					<img src={Logo} width="10" ref={ (e) => this.image = e }/>
+					<Link to="/" onClick={ () => this.setTitle(this.items[0].title) }>
+						<img src={Logo} width="10" ref={ (e) => this.image = e }/>
+					</Link>
 				</div>
 				<div className="nav-title">
 					Components&nbsp;
@@ -59,9 +64,12 @@ class Menu extends Component{
 							this.items.map((value, i) => {
 								return(
 									<li key={i}>
-										<Link to={value.link} onClick={ () => this.setTitle(value) }>
-											{value.title}
-										</Link>
+										{
+											i !== 0 ?
+											<Link to={value.link} onClick={ () => this.setTitle(value.title) }>
+												{value.title}
+											</Link> : null
+										}
 									</li>
 								)
 							})

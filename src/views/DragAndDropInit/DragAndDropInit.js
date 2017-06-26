@@ -16,7 +16,12 @@ class DragAndDropInit extends Component {
 
 		}
 	}
-
+	componentWillMount() {
+		localStorage.setItem(
+			'title',
+			'Drag & Drop'
+		);
+	}
 	render() {
 		return(
 			<DragAndDrop 

@@ -12,20 +12,19 @@ class Content extends Component{
 		super();
 		this.storage = null;
 	}
-
+	componentDidUpdate() {
+		this.titleDOM.innerText = localStorage.getItem('title');
+	}
+	componentDidMount() {
+		this.titleDOM.innerText = localStorage.getItem('title');
+	}	
 	render() {
 		const { children } = this.props; 
-
-			const storage = JSON.parse(localStorage.getItem('title'));	
 			
 		return(
 			<section className="section">
 				<div className="content">
-					<div className="main-title">
-						{
-							storage ? storage.title : null
-						}
-					</div>
+					<div className="main-title" ref={(e) => this.titleDOM = e}/>
 					<div>
 						{children}
 					</div>

@@ -9,7 +9,7 @@
             input {
                 padding: 6px;
                 width: 100%;
-                //visibility: hidden;
+                visibility: hidden;
                 @include transition(0.5s);
             }
         }

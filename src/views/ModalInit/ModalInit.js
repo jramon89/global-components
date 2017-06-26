@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Modal from '../../components/Modal/Modal';
-
+import image from '../../../static/images/image08.jpg';
 export default
 class CarrouselInit extends Component{
 
     constructor(props){
         super(props);
         this.state={
-            show: true
+            show: true,
+            image: "http://lorempixel.com/900/400/animals/",
         };
     }
 
@@ -16,7 +17,12 @@ class CarrouselInit extends Component{
             show: !this.state.show
        });
     }
-    
+    componentWillMount() {
+        localStorage.setItem(
+            'title',
+            'Modal'
+        );
+    }
     render() {
         const { show } = this.state;
 
@@ -26,7 +32,7 @@ class CarrouselInit extends Component{
             <Modal
                 isOpen={show}
                 toggleModal={this.toggleModal.bind(this)}>
-                <img src="http://lorempixel.com/900/400/animals/" alt="animals"/>
+                <img src={image} alt="animals"/>
             </Modal>
           </div>
         

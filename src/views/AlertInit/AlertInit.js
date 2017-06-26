@@ -10,7 +10,12 @@ class AlertInit extends Component{
 		
 		}
 	}
-
+	componentWillMount() {
+		localStorage.setItem(
+			'title',
+			'Alert'
+		);
+	}
 	render() {
 		const { data } = this.state;
 

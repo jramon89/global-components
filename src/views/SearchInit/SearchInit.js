@@ -9,7 +9,12 @@ class SearchInit extends Component{
 		super(props);
 		this.state={}
 	}
-	
+	componentWillMount() {
+		localStorage.setItem(
+			'title',
+			'Search'
+		);
+	}
 	render() {
 		const { active } = this.state;
 		return(
