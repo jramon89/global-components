@@ -43,7 +43,7 @@ class CarrouselInit extends Component{
 					items={items}
 					bullets={true}
 					previews={true}
-					autoPlay={true}
+					autoPlay={false}
 					animation="slide"
 				/>
 		);
